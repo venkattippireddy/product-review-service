@@ -30,9 +30,9 @@ public class ProductReviewController {
 
 	@PostMapping("/products/{productId}/reviews")
 	public ResponseEntity<ProductReview> saveProductReviews(@RequestHeader(value = "API-KEY") String secret,
-			@RequestBody ProductReview review, @PathVariable Long prodId) {
+			@RequestBody ProductReview review, @PathVariable Long productId) {
 
-		return ResponseEntity.ok(productReviewService.saveProductReviews(review, prodId));
+		return ResponseEntity.ok(productReviewService.saveProductReviews(review, productId));
 	}
 	@PutMapping("/products/{productId}/reviews/{reviewId}")
 	public ResponseEntity<ProductReview> updateProductReviews(@RequestBody ProductReview review,
